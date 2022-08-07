@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{158D3E02-D969-4E7D-ABFC-9CF40FA3F24B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Remote_Server_Application</RootNamespace>
+    <AssemblyName>Remote Server Application</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PTSLibrary">
+      <HintPath>..\PTSLibrary\bin\Debug\PTSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PTSProjectLibrary">
+      <HintPath>..\PTSProjectLibrary\bin\Debug\PTSProjectLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTSProjectLibrary\customer.cs" />
+    <Compile Include="PTSProjectLibrary\DAOs\AdminDAO.cs" />
+    <Compile Include="PTSProjectLibrary\DAOs\ClientDAO.cs" />
+    <Compile Include="PTSProjectLibrary\DAOs\CustomerDAO.cs" />
+    <Compile Include="PTSProjectLibrary\DAOs\SuperDAO.cs" />
+    <Compile Include="PTSProjectLibrary\project.cs" />
+    <Compile Include="PTSProjectLibrary\Properties\Settings.Designer.cs" />
+    <Compile Include="PTSProjectLibrary\PTSAdminFacade.cs" />
+    <Compile Include="PTSProjectLibrary\PTSClientFacade.cs" />
+    <Compile Include="PTSProjectLibrary\PTSCustomerFacade.cs" />
+    <Compile Include="PTSProjectLibrary\PTSProjectDataSet.Designer.cs" />
+    <Compile Include="PTSProjectLibrary\PTSSuperFacade.cs" />
+    <Compile Include="PTSProjectLibrary\Status.cs" />
+    <Compile Include="PTSProjectLibrary\task.cs" />
+    <Compile Include="PTSProjectLibrary\team.cs" />
+    <Compile Include="PTSProjectLibrary\teamleader.cs" />
+    <Compile Include="PTSProjectLibrary\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="PTSProjectLibrary\app.config" />
+    <None Include="PTSProjectLibrary\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="PTSProjectLibrary\obj\Debug\PTSProjectLibrary.csproj.AssemblyReference.cache" />
+    <None Include="PTSProjectLibrary\Properties\Settings.settings" />
+    <None Include="PTSProjectLibrary\PTSProjectDataSet.xsc">
+      <DependentUpon>PTSProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTSProjectLibrary\PTSProjectDataSet.xsd" />
+    <None Include="PTSProjectLibrary\PTSProjectDataSet.xss">
+      <DependentUpon>PTSProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTSProjectLibrary\PTSProjectLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PTSProjectLibrary\obj\Debug\TempPE\PTSProjectDataSet.Designer.cs.dll" />
+    <Content Include="PTSProjectLibrary\PTSProjectLibrary.sln" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PTSProjectLibrary\bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
